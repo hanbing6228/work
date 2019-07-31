@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            #list li {
+                list-style-type: none;
+                width: 100px;
+                height: 50px;
+                line-height: 50px;
+                background-color: beige;
+                text-align: center;
+                float: left;
+            }
+            #list li.current {
+                background-color: red;
+            }
+            #list li a {
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="menu">
+            <ul id="list">
+                <li class="current">
+                    <a href="Javascript:void(0)">首页</a>
+                </li>
+                <li>
+                    <a href="JavaScript:void(0)">HTML</a>
+                </li>
+                <li>
+                    <a href="JavaScript:void(0)">CSS</a>
+                </li>
+                <li>
+                    <a href="JavaScript:void(0)">JavaScript</a>
+                </li>
+                <li>
+                    <a href="JavaScript:void(0)">关于</a>
+                </li>
+                <li>
+                    <a href="JavaScript:void(0)">帮助</a>
+                </li>
+            </ul>
+        </div>
+        <script>
+            var li0bjs = document.getElementById("list").getElementsByTagName("li");
+            for(var i=0; i<li0bjs.length; i++) {
+                var a0bj = li0bjs[i].firstElementChild;
+                a0bj.onclick = function() {
+                    for(var j = 0; j< li0bjs.length; j++) {
+                        li0bjs[j].removeAttribute("class");
+                    }
+                    this.parentNode.classNme = "current";
+                };
+            }
+        </script>
+    </body>
+</html>
+
